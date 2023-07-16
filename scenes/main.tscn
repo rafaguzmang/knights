@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://5idu8eudveiy"]
+
+[ext_resource type="PackedScene" path="res://enemy/enemy.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/floor.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://hero/hero.tscn" id="3"]
+
+[node name="Main" type="Node3D"]
+
+[node name="floor" parent="." instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0408821, -1.56976, 18.5048)
+
+[node name="hero" parent="." instance=ExtResource("3")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.625599, 0, -48.3805)
+
+[node name="Camera3D" type="Camera3D" parent="hero"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0408821, 6.43024, 18.5048)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="hero/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="enemy" parent="." instance=ExtResource("1")]
